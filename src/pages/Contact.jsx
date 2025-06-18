@@ -1,0 +1,25 @@
+// src/pages/Contact.jsx
+import React from 'react';
+import SocialLinks from '../components/SocialLinks'; // <--- NEW IMPORT
+
+export default function Contact() {
+    return (
+        <div className="w-full max-w-5xl mx-auto p-4 text-center">
+            <h2 className="text-4xl font-bold mb-8 text-yellow-400">Get In Touch</h2>
+            <p className="text-lg mb-8">
+                I'm always open to new opportunities and collaborations. Feel free to reach out!
+            </p>
+
+            {/* Add your contact form or other direct contact info here */}
+            <div className="flex flex-wrap justify-center gap-6 mt-8">
+                <a href="mailto:joshua@example.com" className="text-blue-400 hover:underline">joshua@example.com</a>
+                <a href="tel:+1234567890" className="text-blue-400 hover:underline">+1 (234) 567-890</a>
+            </div>
+
+            {/* Render the SocialLinks component here */}
+            <div className="mt-12"> {/* Add some margin top */}
+                <SocialLinks />
+            </div>
+        </div>
+    );
+}

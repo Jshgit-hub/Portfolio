@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* tailwind doesn't support this by default, so use @layer if needed */
+@layer base {
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply m-4;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient {
+    animation: gradient 6s ease infinite;
+}
+
+body {
+    @apply font-montserrat;
+}
+
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+.social-link-gradient-base {
+    position: relative;
+    z-index: 0;
+    padding: 10px;
+
+    overflow: hidden;
+
+}
+
+
+.social-link-gradient-base::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    /* Matches your rounded-lg */
+    padding: 2px;
+    /* This creates the visible border thickness */
+
+    /* Keep background-size larger than element to create the waving effect */
+    background-size: 200% 200%;
+
+
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    animation: border-wave 6s ease-in infinite;
+}
+
+/* Specific gradient colors for each link */
+.social-link-gradient-email::before {
+    background-image: linear-gradient(to right, theme('colors.gradient-email-1'), theme('colors.gradient-email-2'), theme('colors.gradient-email-1'));
+}
+
+.social-link-gradient-linkedin::before {
+    background-image: linear-gradient(to right, theme('colors.gradient-linkedin-1'), theme('colors.gradient-linkedin-2'), theme('colors.gradient-linkedin-1'));
+}
+
+.social-link-gradient-upwork::before {
+    background-image: linear-gradient(to right, theme('colors.gradient-upwork-1'), theme('colors.gradient-upwork-2'), theme('colors.gradient-upwork-1'));
+}
+
+.social-link-gradient-github::before {
+    background-image: linear-gradient(to right, theme('colors.gradient-github-1'), theme('colors.gradient-github-2'), theme('colors.gradient-github-1'));
+}
+
+/* Hover effect: pause animation. */
+.social-link-gradient-base:hover::before {
+    animation-play-state: paused;
+}
