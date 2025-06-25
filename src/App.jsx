@@ -15,7 +15,6 @@ inject();
 export default function App() {
   return (
     <div className="bg-brand text-white min-h-screen">
-      <Analytics />
 
       <Layout>
         <Navbar />
