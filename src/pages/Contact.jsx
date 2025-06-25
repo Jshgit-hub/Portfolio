@@ -5,7 +5,7 @@ import SocialLinks from '../components/SocialLinks'; // <--- NEW IMPORT
 export default function Contact() {
     return (
         <div className="w-full max-w-5xl mx-auto p-4 text-center">
-            <h2 className="text-5xl font-extrabold  uppercase mb-8 tracking-widest">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase mb-10 tracking-widest">
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                     Get in Touch
                 </span>

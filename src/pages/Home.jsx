@@ -188,7 +188,7 @@ const Home = () => {
                 ref={experienceSectionRef}
                 className={`transition-all duration-1000 ease-out ${showExperience ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}`}
             >
-                <section id='experience' className="py-12  min-h-screen flex items-center justify-start">
+                <section id='experience' className="py-12  min-h-screen flex">
                     <Experience />
                 </section>
             </div>

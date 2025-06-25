@@ -71,7 +71,7 @@ const Experience = () => {
         >
             <div className="max-w-5xl mx-auto relative">
                 {/* Title */}
-                <h2 className="text-5xl font-extrabold mx-auto  uppercase mb-28 tracking-widest">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase mb-10 tracking-widest">
                     <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                         Experience
                     </span>
