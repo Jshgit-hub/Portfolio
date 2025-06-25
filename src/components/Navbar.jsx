@@ -9,7 +9,7 @@ const Navbar = () => {
             <div className="hidden md:flex gap-8">
                 <a href="#home" className="hover:text-cyan-400 transition-colors">Home</a>
                 <a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a>
-                {/*        <a href="#resume" className="hover:text-cyan-400 transition-colors">Resume</a> */}
+                <a href="#experience" className="hover:text-cyan-400 transition-colors">Experience</a>
                 <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
             </div>
             <button
@@ -28,7 +28,7 @@ const Navbar = () => {
             >
                 <a href="#home" className="hover:text-cyan-400" onClick={() => setOpen(false)}>Home</a>
                 <a href="#projects" className="hover:text-cyan-400" onClick={() => setOpen(false)}>Projects</a>
-                <a href="#resume" className="hover:text-cyan-400" onClick={() => setOpen(false)}>Resume</a>
+                <a href="#experience" className="hover:text-cyan-400" onClick={() => setOpen(false)}>Experience</a>
                 <a href="#contact" className="hover:text-cyan-400" onClick={() => setOpen(false)}>Contact</a>
             </div>
         </nav>

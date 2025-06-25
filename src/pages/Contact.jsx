@@ -16,12 +16,12 @@ export default function Contact() {
 
             {/* Add your contact form or other direct contact info here */}
             <div className="flex flex-wrap justify-center gap-6 mt-8">
-                <a href="mailto:joshua@example.com" className="text-blue-400 hover:underline">joshua@example.com</a>
-                <a href="tel:+1234567890" className="text-blue-400 hover:underline">+1 (234) 567-890</a>
+                <a href="mailto:joshua@example.com" className="text-blue-400 hover:underline">1114joshuafeliciano@Gmail.com</a>
+                <a href="tel:+1234567890" className="text-blue-400 hover:underline">+63 963 759 5816</a>
             </div>
 
-            {/* Render the SocialLinks component here */}
-            <div className="mt-12"> {/* Add some margin top */}
+
+            <div className="mt-12">
                 <SocialLinks />
             </div>
         </div>

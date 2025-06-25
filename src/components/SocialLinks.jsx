@@ -28,7 +28,7 @@ function SocialLinks() {
                 <FaLinkedin className="mr-2 text-lg text-blue-400" /> LinkedIn
             </a>
             <a
-                href="https://upwork.com/yourprofile"
+                href="https://ph.jobstreet.com/profile/me"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${linkBaseClasses} social-link-gradient-upwork`}
@@ -48,4 +48,3 @@ function SocialLinks() {
 }
 
 export default SocialLinks;
-// Note: Replace the href values with your actual profile links.
