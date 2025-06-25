@@ -5,7 +5,7 @@ import novocoverImage from '../assets/img/novocover.png';
 import lendingcoverImage from '../assets/img/lendingcover.jpeg';
 import ekonsultacoverImage from '../assets/img/ekonsultacover.jpeg';
 import inventorySystemImage from '../assets/img/noimage.jpeg';
-import tradeCoverImage from '../assets/img/TradeCover.jpeg';
+import tradeCoverImage from '../assets/img/Tradecover.jpeg';
 import caregiverImage from '../assets/img/Caregiver.jpeg';
 
 
