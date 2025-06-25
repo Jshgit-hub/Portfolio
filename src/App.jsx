@@ -6,12 +6,14 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Layout from "./theme/Layout";
 import Experience from "./pages/Experience";
+import { Analytics } from "@vercel/analytics/next"
 
 
 
 export default function App() {
   return (
     <div className="bg-brand text-white min-h-screen">
+      <Analytics />
 
       <Layout>
         <Navbar />
