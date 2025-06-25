@@ -36,7 +36,7 @@ const Experience = () => {
     });
 
     const saberY = useSpring(
-        useTransform(scrollYProgress, [0, 1], [0, 1450]), // Adjust 1200 to your section height
+        useTransform(scrollYProgress, [0, 1], [0, 1200]), // Adjust 1200 to your section height
         { stiffness: 80, damping: 20 }
     );
 
@@ -71,17 +71,17 @@ const Experience = () => {
         >
             <div className="max-w-5xl mx-auto relative">
                 {/* Title */}
-                <h2 className="text-5xl font-extrabold  uppercase mb-28 tracking-widest">
+                <h2 className="text-5xl font-extrabold mx-auto  uppercase mb-28 tracking-widest">
                     <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                         Experience
                     </span>
                 </h2>
 
 
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[3px] h-full z-10">
+                <div className="hidden sm:block md:block absolute top-0 left-1/2 -translate-x-1/2 w-[3px] h-full z-10">
                     <motion.div
                         style={{ height: saberY }}
-                        className="w-full bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-500 rounded-full shadow-[0_0_30px_#00f2fe88]"
+                        className="w-full  bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-500 rounded-full shadow-[0_0_30px_#00f2fe88]"
                     />
                     {/*  <motion.div
                         style={{ y: saberY }}
@@ -100,7 +100,7 @@ const Experience = () => {
                                     : 'opacity-0 translate-y-10 pointer-events-none'
                                 }`}
                         >
-                            <div className="w-full md:w-1/2 text-right md:text-left px-4">
+                            <div className="w-full md:w-1/2 text-right sm:text-center px-4">
                                 <p className="text-sm text-cyan-300 mb-1 tracking-wider">
                                     {job.dates}
                                 </p>

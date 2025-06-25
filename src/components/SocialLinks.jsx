@@ -14,7 +14,7 @@ function SocialLinks() {
     return (
         <div className="flex flex-wrap justify-center gap-5">
             <a
-                href="mailto:your.email@gmail.com"
+                href="mailto:1114joshuafeliciano@gmail.com"
                 className={`${linkBaseClasses} social-link-gradient-email`}
             >
                 <SiGmail className="mr-2 text-lg text-red-500" /> Gmail
