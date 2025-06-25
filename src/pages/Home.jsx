@@ -167,11 +167,12 @@ const Home = () => {
 
             {/* Social Links - FIXED at bottom of hero, controlled by showHeroSocialLinks */}
             <div
-                className={`fixed bottom-10 mx-2 justify-start sm:justify-center flex gap-5 transition-all duration-1000 ease-out z-10
-                ${showHeroSocialLinks ? 'opacity-0 translate-y-12 pointer-events-none' : 'opacity-100'}`}
+                className={`hidden sm:fixed sm:bottom-6 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:flex sm:flex-wrap sm:justify-center sm:items-center sm:gap-4 sm:px-4 sm:transition-all sm:duration-700 sm:ease-out z-10 ${showHeroSocialLinks ? 'opacity-0 translate-y-12 pointer-events-none' : 'opacity-100'
+                    }`}
             >
                 <SocialLinks />
             </div>
+
 
             {/* Projects Section */}
             <div
