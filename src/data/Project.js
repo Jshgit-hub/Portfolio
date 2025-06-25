@@ -14,7 +14,7 @@ const projects = [
         image: 'noimage.jpeg', // Provide an actual filename for this project
         title: 'Inventory System',
         description: 'A system to manage product inventory, track stock levels, and handle orders.', // Added a placeholder description
-        technologies: ['React', 'TailwindCSS', 'Context API'],
+        technologies: ['PHP', 'MYSQL', 'JavaScript', 'TailwindCSS'],
         /*  liveDemoLink: 'https://hive-attention-tokens.com/', */
         githubLink: 'https://github.com/your-repo/blockchain-explorer',
     },
@@ -23,7 +23,7 @@ const projects = [
         image: 'lendingcover.jpeg', // Use just the filename as an identifier
         title: 'Lending System',
         description: 'A decentralized lending platform that allows users to lend and borrow cryptocurrencies.',
-        technologies: ['React', 'Redux', 'Firebase', 'GitHub API'],
+        technologies: ['PHP', 'Tailwind', 'MySQL', 'TailwindCSS'],
         /* liveDemoLink: 'https://gitprofile-demo.vercel.app/', */
         githubLink: 'https://github.com/Jshgit-hub/LendingWeb.git',
     },

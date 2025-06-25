@@ -118,7 +118,7 @@ const Home = () => {
                     Joshua Vera Cruz La Rosa
                 </h2>
                 <p className="text-md text-gray-300 justify-start leading-relaxed">
-                    Hi! I’m Joshua Vera Cruz La Rosa, a passionate frontend developer with a strong foundation in backend development. I specialize in building responsive and user-friendly web interfaces using React, Tailwind CSS, and JavaScript. I also create full-stack solutions with PHP and MySQL, bringing functionality and design together. I’m always eager to learn new technologies and deliver clean, efficient, and impactful web experiences.
+                    Hi! I’m Joshua Vera Cruz La Rosa, a passionate front-end developer with a strong foundation in backend development. I specialize in building responsive and user-friendly web interfaces using React, Tailwind CSS, and JavaScript. I also create full-stack solutions with PHP and MySQL, bringing functionality and design together. I’m always eager to learn new technologies and deliver clean, efficient, and impactful web experiences.
                 </p>
 
                 <button
