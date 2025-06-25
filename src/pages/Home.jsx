@@ -3,10 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 
 // Import your actual page components
 import Project from './Project';
-import Resume from './resume';
 import Contact from './Contact';
 import Experience from './Experience'; // Assuming you have an Experience component
-import { motion, useMotionValue, useSpring } from 'framer-motion';
 import CustomCursor from '../components/customCursor';
 
 // Import the new SocialLinks component

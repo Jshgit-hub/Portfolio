@@ -1,12 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
-
-import Resume from "./pages/resume";
 import Projects from "./pages/Project";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Layout from "./theme/layout";
+import Experience from "./pages/Experience";
 
 
 
@@ -19,7 +18,7 @@ export default function App() {
         <main className="p-4 max-w-5xl mx-auto">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Resume" element={<Resume />} />
+            <Route path="/experience" element={<Experience />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

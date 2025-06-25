@@ -4,7 +4,7 @@ import ProjectCard from "../components/ProjectCard";
 export default function Projects() {
     return (
         <section className="py-10">
-            <h2 className="text-5xl font-extrabold  uppercase mb-28 tracking-widest">
+            <h2 className="text-5xl font-extrabold  uppercase mb-10 tracking-widest">
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                     My Projects
                 </span>
