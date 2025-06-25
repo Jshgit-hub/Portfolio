@@ -6,7 +6,9 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Layout from "./theme/Layout";
 import Experience from "./pages/Experience";
-import { Analytics } from "@vercel/analytics/next"
+import { inject } from '@vercel/analytics';
+
+inject();
 
 
 
