@@ -19,10 +19,9 @@ const experienceData = [
         location: 'Cabanatuan Nueva Ecija, Philippines',
         dates: 'January 2025 - May 2025',
         responsibilities: [
-            'Developing mobile and web applications using React and React Native.',
-            'Developing web scraping bots using Python and Selenium.',
-            'Helping with PHP backend tasks and occasionally working with different programming languages.',
-            'Consulting on front-end tech stack and integrating multiple external APIs across all platforms.',
+            'Assisted in designing and developing an e-Konsulta Patient Management System to streamline outpatient consultations.',
+            'Helped transition manual transactions into a systematic digital process, allowing staff to access patient overviews and manage records more efficiently.',
+            'Developing apis for the e-Konsulta Patient Management System using Express.js and MySQL.',
         ],
     },
 ];
