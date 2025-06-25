@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Project";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
-import Layout from "./theme/layout";
+import Layout from "./theme/Layout";
 import Experience from "./pages/Experience";
 
 
