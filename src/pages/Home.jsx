@@ -6,6 +6,8 @@ import Project from './Project';
 import Resume from './resume';
 import Contact from './Contact';
 import Experience from './Experience'; // Assuming you have an Experience component
+import { motion, useMotionValue, useSpring } from 'framer-motion';
+import CustomCursor from '../components/customCursor';
 
 // Import the new SocialLinks component
 import SocialLinks from '../components/SocialLinks';
@@ -82,9 +84,15 @@ const Home = () => {
         }, 100); // Small delay to allow state update to apply before scroll
     };
 
+
+
+
     return (
+
         <div className="relative min-h-screen bg-brand text-gray-400">
-            {/* YOUR EXISTING HOME HERO SECTION CONTENT */}
+
+            <CustomCursor />
+
             <section ref={heroRef} className="flex flex-col py-16 font-montserrat bg-brand items-start relative">
                 <p className="mt-5 justify-start text-xl md:text-2xl">Hi, I'm</p>
                 <h2 className="text-4xl justify-start md:text-6xl font-extrabold bg-gradient-to-r from-purple-500 via-blue-400 to-pink-400 bg-[length:300%_300%] animate-gradient bg-clip-text text-transparent mb-4">
@@ -93,6 +101,7 @@ const Home = () => {
                 <p className="text-md text-gray-300 justify-start leading-relaxed">
                     Hi! I’m Joshua Vera Cruz La Rosa, a passionate frontend developer with a strong foundation in backend development. I specialize in building responsive and user-friendly web interfaces using React, Tailwind CSS, and JavaScript. I also create full-stack solutions with PHP and MySQL, bringing functionality and design together. I’m always eager to learn new technologies and deliver clean, efficient, and impactful web experiences.
                 </p>
+
                 {/* The Scroll Indicator (Down Arrow) */}
                 <div
                     className="absolute bottom-1 sm:bottom-8 right-10 text-5xl cursor-pointer text-blue-400 animate-bounce-slow"
@@ -131,14 +140,14 @@ const Home = () => {
             </div>
 
             {/* Resume Section */}
-            <div
+            {/*   <div
                 ref={resumeSectionRef}
                 className={`transition-all duration-1000 ease-out ${showResume ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}`}
             >
                 <section className="py-12 px-8 min-h-screen flex items-center justify-center">
                     <Resume />
                 </section>
-            </div>
+            </div> */}
 
             {/* Contact Section */}
             <div
@@ -151,7 +160,7 @@ const Home = () => {
             </div>
 
             {/* This extra div ensures there's enough scrollable space */}
-            <div className="h-[150vh]"></div>
+            {/* <div className="h-[150vh]"></div> */}
         </div>
     );
 }

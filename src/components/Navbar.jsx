@@ -9,7 +9,7 @@ const Navbar = () => {
             <div className="hidden md:flex gap-8">
                 <a href="#home" className="hover:text-cyan-400 transition-colors">Home</a>
                 <a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a>
-                <a href="#resume" className="hover:text-cyan-400 transition-colors">Resume</a>
+                {/*        <a href="#resume" className="hover:text-cyan-400 transition-colors">Resume</a> */}
                 <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
             </div>
             <button
