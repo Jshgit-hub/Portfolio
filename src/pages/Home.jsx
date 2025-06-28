@@ -209,7 +209,7 @@ const Home = () => {
                 ref={contactSectionRef}
                 className={`transition-all duration-1000 ease-out ${showContact ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}`}
             >
-                <section id='contact' className="py-12 px-8 min-h-screen flex items-center justify-center">
+                <section id='contact' className="py-12 px-8 flex items-center justify-center">
                     <Contact />
                 </section>
             </div>

@@ -1,7 +1,7 @@
 // src/components/ProjectCard.jsx
 import React from 'react';
 
-import novocoverImage from '../assets/img/novocover.png';
+import novocoverImage from '../assets/img/novomap.jpeg';
 import lendingcoverImage from '../assets/img/lendingcover.jpeg';
 import ekonsultacoverImage from '../assets/img/ekonsultacover.jpeg';
 import inventorySystemImage from '../assets/img/noimage.jpeg';
@@ -11,7 +11,7 @@ import caregiverImage from '../assets/img/Caregiver.jpeg';
 
 
 const projectImageMap = {
-    'novocover.png': novocoverImage,
+    'novomap.jpeg': novocoverImage,
     'lendingcover.jpeg': lendingcoverImage,
     'ekonsultacover.jpeg': ekonsultacoverImage,
     'noimage.jpeg': inventorySystemImage,
@@ -45,7 +45,7 @@ const ProjectCard = ({ project }) => {
 
 
 
-                <div className="relative w-full h-80 bg-cover bg-center"
+                <div className="relative w-full h-80 bg-no-repeat bg-cover rounded-lg"
                     style={{ backgroundImage: `url(${imageUrl})` }}>
 
                 </div>
