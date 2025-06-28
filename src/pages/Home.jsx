@@ -197,7 +197,7 @@ const Home = () => {
                 <section id="techstack" className="py-20 min-h-min: ">
                     <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase mb-10 tracking-widest">
                         <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
-                            My Tech Stack
+                            My TechStack
                         </span>
                     </h2>
                     <ScrollVelocity
@@ -248,7 +248,7 @@ const Home = () => {
                 ref={contactSectionRef}
                 className={`transition-all duration-1000 ease-out ${showContact ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}`}
             >
-                <section id='contact' className="py-12 px-8 min-h-screen flex items-center justify-center">
+                <section id='contact' className="py-12 px-8 flex items-center justify-center">
                     <Contact />
                 </section>
             </div>
