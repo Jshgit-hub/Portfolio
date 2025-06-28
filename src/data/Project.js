@@ -9,17 +9,17 @@ const projects = [
         /* liveDemoLink: 'https://www.intenseproxy.com/', */
         githubLink: 'https://github.com/Jshgit-hub/NovoCamera.git',
     },
+
+    /*    id: 2,
+       image: 'noimage.jpeg', // Provide an actual filename for this project
+       title: 'Inventory System',
+       description: 'A system to manage product inventory, track stock levels, and handle orders.', // Added a placeholder description
+       technologies: ['PHP', 'MYSQL', 'JavaScript', 'TailwindCSS'], */
+    /*  liveDemoLink: 'https://hive-attention-tokens.com/', */
+    /*  githubLink: 'https://github.com/your-repo/blockchain-explorer', */
+
     {
         id: 2,
-        image: 'noimage.jpeg', // Provide an actual filename for this project
-        title: 'Inventory System',
-        description: 'A system to manage product inventory, track stock levels, and handle orders.', // Added a placeholder description
-        technologies: ['PHP', 'MYSQL', 'JavaScript', 'TailwindCSS'],
-        /*  liveDemoLink: 'https://hive-attention-tokens.com/', */
-        githubLink: 'https://github.com/your-repo/blockchain-explorer',
-    },
-    {
-        id: 3,
         image: 'lendingcover.jpeg', // Use just the filename as an identifier
         title: 'Lending System',
         description: 'A decentralized lending platform that allows users to lend and borrow cryptocurrencies.',
@@ -28,7 +28,7 @@ const projects = [
         githubLink: 'https://github.com/Jshgit-hub/LendingWeb.git',
     },
     {
-        id: 4,
+        id: 3,
         image: 'ekonsultacover.jpeg', // Use just the filename as an identifier
         title: 'Ekonsulta Patient Management',
         description: 'A patient management system for doctors and patients to manage appointments, prescriptions, and medical records.',
@@ -38,7 +38,7 @@ const projects = [
     },
 
     {
-        id: 5,
+        id: 4,
         image: 'TradeCover.jpeg',
         title: 'Ecommerce Construction Supply',
         description: ' An e-commerce platform for construction supplies, allowing users to browse products, add them to a cart, and make purchases.',
@@ -47,7 +47,7 @@ const projects = [
 
     },
     {
-        id: 6,
+        id: 5,
         image: 'Caregiver.jpeg',
         title: 'Caregiver Finder',
         description: 'A platform that connects caregivers with families in need of caregiving services, allowing users to search for caregivers based on location and services offered.',

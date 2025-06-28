@@ -45,7 +45,7 @@ const ProjectCard = ({ project }) => {
 
 
 
-                <div className="relative w-full h-80 bg-cover bg-center"
+                <div className="relative w-full h-80 bg-cover  rounded-lg"
                     style={{ backgroundImage: `url(${imageUrl})` }}>
 
                 </div>
