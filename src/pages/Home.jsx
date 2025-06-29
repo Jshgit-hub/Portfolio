@@ -7,6 +7,8 @@ import Contact from './Contact';
 import Experience from './Experience';
 import CustomCursor from '../components/customCursor';
 import ScrollVelocity from '../components/ScrollVelocity';
+import BlurText from '../components/Blurtext';
+
 import {
     FaPhp,
     FaJs,
@@ -20,7 +22,7 @@ import {
     SiMysql,
     SiVite,
     SiExpress,
-} from 'react-icons/si'; // Import the ScrollVelocity component
+} from 'react-icons/si';
 
 // Import the new SocialLinks component
 import SocialLinks from '../components/SocialLinks';
@@ -156,13 +158,30 @@ const Home = () => {
             <CustomCursor />
 
             <section id='home' ref={heroRef} className="flex flex-col py-16 font-montserrat bg-brand items-start relative">
-                <p className="mt-5 justify-start text-xl md:text-2xl">Hi, I'm</p>
-                <h2 className="text-4xl justify-start md:text-6xl font-extrabold bg-gradient-to-r from-purple-500 via-blue-400 to-pink-400 bg-[length:300%_300%] animate-gradient bg-clip-text text-transparent mb-4">
-                    Joshua Vera Cruz La Rosa
-                </h2>
-                <p className="text-md text-gray-300 justify-start leading-relaxed">
-                    A passionate front-end developer with a strong foundation in backend development. I specialize in building responsive and user-friendly web interfaces using React, Tailwind CSS, and JavaScript. I also create full-stack solutions with PHP and MySQL, bringing functionality and design together. I’m always eager to learn new technologies and deliver clean, efficient, and impactful web experiences.
-                </p>
+                <BlurText
+                    text="Hi I'm"
+                    delay={150}
+                    animateBy="words"
+                    direction="top"
+                    className="mt-5 justify-start text-xl md:text-2xl"
+                />
+
+                <BlurText
+                    text="Joshua Vera Cruz La Rosa"
+                    delay={150}
+                    animateBy="words"
+                    direction="top"
+                    className="text-4xl md:text-6xl font-extrabold text-white mb-4 "
+                />
+
+                <BlurText
+                    text=" A passionate front-end developer with a strong foundation in backend development. I specialize in building responsive and user-friendly web interfaces using React, Tailwind CSS, and JavaScript. I also create full-stack solutions with PHP and MySQL, bringing functionality and design together. I’m always eager to learn new technologies and deliver clean, efficient, and impactful web experiences."
+                    delay={150}
+                    animateBy="words"
+                    direction="top"
+                    className="text-md text-gray-300 justify-start leading-relaxed"
+                />
+
 
                 <button
                     className={`p-3 ml-3 rounded-md mt-5 bg-gradient-to-r from-purple-500 via-blue-400 to-pink-400 bg-[length:300%_300%] text-white font-semibold flex items-center justify-center gap-2 transition-all duration-300 ${isLoading ? 'opacity-70 cursor-not-allowed' : ''
