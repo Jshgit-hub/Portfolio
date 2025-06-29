@@ -6,6 +6,7 @@ import Project from './Project';
 import Contact from './Contact';
 import Experience from './Experience'; // Assuming you have an Experience component
 import CustomCursor from '../components/customCursor';
+import ScrollVelocity from '../components/ScrollVelocity'; // Import the ScrollVelocity component
 
 // Import the new SocialLinks component
 import SocialLinks from '../components/SocialLinks';
@@ -14,6 +15,7 @@ const Home = () => {
     const [showProjects, setShowProjects] = useState(false);
     const [showResume, setShowResume] = useState(false);
     const [showContact, setShowContact] = useState(false);
+    const [showTechstack, setshowTech] = useState(false);
     const [showExperience, setShowExperience] = useState(false);
     const [showHeroSocialLinks, setShowHeroSocialLinks] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -40,6 +42,7 @@ const Home = () => {
     const resumeSectionRef = useRef(null);
     const contactSectionRef = useRef(null);
     const experienceSectionRef = useRef(null);
+    const TechStackSectionRef = useRef(null);
 
 
     useEffect(() => {
@@ -49,6 +52,9 @@ const Home = () => {
 
             const heroBottom = heroRef.current ? heroRef.current.offsetTop + heroRef.current.offsetHeight : 0;
             const projectsThreshold = heroBottom - (viewportHeight * 0.5); // Reveal Projects when hero is halfway out
+
+            const showTechstackThreshold = heroBottom - (viewportHeight * 0.5); // Show Techstack when hero is halfway out
+
 
             const projectsSectionBottom = projectsSectionRef.current ? projectsSectionRef.current.offsetTop + projectsSectionRef.current.offsetHeight : 0;
             const experienceThreshold = projectsSectionBottom - (viewportHeight * 0.5); // Reveal Experience when projects is halfway out
@@ -63,6 +69,16 @@ const Home = () => {
             // --- Reveal Logic ---
 
             // Reveal Projects
+            if (scrollY > heroBottom && !showTechstack) {
+                setshowTech(true); // Show Techstack section when we scroll past hero 
+            }
+
+            // Reveal Techstack
+            // This ensures Techstack only reveals after we scroll past hero
+            if (scrollY > showTechstackThreshold && !showTechstack) {
+                setshowTech(true);
+            }
+
             if (scrollY > projectsThreshold && !showProjects) {
                 setShowProjects(true);
                 setShowHeroSocialLinks(true); // Hide hero social links once we scroll past hero
@@ -89,7 +105,7 @@ const Home = () => {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [showProjects, showResume, showContact, showExperience, showHeroSocialLinks]);
+    }, [showProjects, showResume, showContact, showTechstack, showExperience, showHeroSocialLinks]);
 
 
 
@@ -171,6 +187,29 @@ const Home = () => {
                     }`}
             >
                 <SocialLinks />
+            </div>
+
+            {/*  */}
+            <div
+                ref={TechStackSectionRef}
+                className={`transition-all duration-1000 ease-out ${showTechstack ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}`}
+            >
+                <section id="techstack" className="py-20 min-h-min: ">
+                    <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase mb-10 tracking-widest">
+                        <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+                            My TechStack
+                        </span>
+                    </h2>
+                    <ScrollVelocity
+                        texts={['PHP   JavaScript   Python    Node.js   MySQL', 'TailwindCSS  React  Bootstrap  Vite.js EXpress.js']}
+                        velocity={80}
+                        className="text-white text-4xl font-semibold tracking-wide"
+                        style={{ whiteSpace: 'nowrap', overflow: 'hidden', width: '100%' }}
+                        numCopies={4}
+                    />
+
+                </section>
+
             </div>
 
 
