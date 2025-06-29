@@ -7,7 +7,7 @@ import Contact from './Contact';
 import Experience from './Experience';
 import CustomCursor from '../components/customCursor';
 import ScrollVelocity from '../components/ScrollVelocity';
-import BlurText from '../components/Blurtext';
+import BlurText from '../components/BlurText';
 
 import {
     FaPhp,
