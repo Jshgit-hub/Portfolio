@@ -11,7 +11,7 @@ const projects = [
     },
 
     {
-        id: 3,
+        id: 2,
         image: 'lendingcover.jpeg', // Use just the filename as an identifier
         title: 'Lending System',
         description: 'A decentralized lending platform that allows users to lend and borrow cryptocurrencies.',
@@ -39,7 +39,7 @@ const projects = [
 
     },
     {
-        id: 5,
+        id: 4,
         image: 'Caregiver.jpeg',
         title: 'Caregiver Finder',
         description: 'A platform that connects caregivers with families in need of caregiving services, allowing users to search for caregivers based on location and services offered.',
