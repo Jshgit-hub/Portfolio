@@ -39,7 +39,7 @@ const projects = [
 
     },
     {
-        id: 4,
+        id: 5,
         image: 'Caregiver.jpeg',
         title: 'Caregiver Finder',
         description: 'A platform that connects caregivers with families in need of caregiving services, allowing users to search for caregivers based on location and services offered.',

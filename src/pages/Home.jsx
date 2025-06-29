@@ -1,12 +1,26 @@
-// src/pages/Home.jsx
+
 import React, { useState, useEffect, useRef } from 'react';
 
-// Import your actual page components
+
 import Project from './Project';
 import Contact from './Contact';
-import Experience from './Experience'; // Assuming you have an Experience component
+import Experience from './Experience';
 import CustomCursor from '../components/customCursor';
-import ScrollVelocity from '../components/ScrollVelocity'; // Import the ScrollVelocity component
+import ScrollVelocity from '../components/ScrollVelocity';
+import {
+    FaPhp,
+    FaJs,
+    FaPython,
+    FaNodeJs,
+    FaReact,
+    FaBootstrap,
+} from 'react-icons/fa';
+import {
+    SiTailwindcss,
+    SiMysql,
+    SiVite,
+    SiExpress,
+} from 'react-icons/si'; // Import the ScrollVelocity component
 
 // Import the new SocialLinks component
 import SocialLinks from '../components/SocialLinks';
@@ -19,6 +33,23 @@ const Home = () => {
     const [showExperience, setShowExperience] = useState(false);
     const [showHeroSocialLinks, setShowHeroSocialLinks] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+
+    const frontendTechs = [
+        { name: 'HTML', icon: <FaJs className="text-[#e34c26]" /> },
+        { name: 'JavaScript', icon: <FaJs className="text-[#f7df1e]" /> },
+        { name: 'React', icon: <FaReact className="text-[#61DAFB]" /> },
+        { name: 'TailwindCSS', icon: <SiTailwindcss className="text-[#38BDF8]" /> },
+        { name: 'Bootstrap', icon: <FaBootstrap className="text-[#7952B3]" /> },
+        { name: 'Vite.js', icon: <SiVite className="text-[#646CFF]" /> },
+    ];
+
+    const backendTechs = [
+        { name: 'PHP', icon: <FaPhp className="text-[#8892be]" /> },
+        { name: 'Python', icon: <FaPython className="text-[#306998]" /> },
+        { name: 'Node.js', icon: <FaNodeJs className="text-[#68a063]" /> },
+        { name: 'MySQL', icon: <SiMysql className="text-[#00758F]" /> },
+        { name: 'Express.js', icon: <SiExpress className="text-gray-300" /> },
+    ];
 
     const resumeFilePath = '/Resume.pdf'; // Path to your resume file
 
@@ -34,7 +65,7 @@ const Home = () => {
             link.click();
             document.body.removeChild(link);
             setIsLoading(false);
-        }, 2000); // Simulate a delay for the download
+        }, 2000);
     }
 
     const heroRef = useRef(null);
@@ -45,53 +76,51 @@ const Home = () => {
     const TechStackSectionRef = useRef(null);
 
 
+
+
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
             const viewportHeight = window.innerHeight;
 
             const heroBottom = heroRef.current ? heroRef.current.offsetTop + heroRef.current.offsetHeight : 0;
-            const projectsThreshold = heroBottom - (viewportHeight * 0.5); // Reveal Projects when hero is halfway out
+            const projectsThreshold = heroBottom - (viewportHeight * 0.5);
 
-            const showTechstackThreshold = heroBottom - (viewportHeight * 0.5); // Show Techstack when hero is halfway out
+            const showTechstackThreshold = heroBottom - (viewportHeight * 0.5);
 
 
             const projectsSectionBottom = projectsSectionRef.current ? projectsSectionRef.current.offsetTop + projectsSectionRef.current.offsetHeight : 0;
-            const experienceThreshold = projectsSectionBottom - (viewportHeight * 0.5); // Reveal Experience when projects is halfway out
+            const experienceThreshold = projectsSectionBottom - (viewportHeight * 0.5);
 
             const experienceSectionBottom = experienceSectionRef.current ? experienceSectionRef.current.offsetTop + experienceSectionRef.current.offsetHeight : 0;
-            const resumeThreshold = experienceSectionBottom - (viewportHeight * 0.5); // Reveal Resume when experience is halfway out
+            const resumeThreshold = experienceSectionBottom - (viewportHeight * 0.5);
 
             const resumeSectionBottom = resumeSectionRef.current ? resumeSectionRef.current.offsetTop + resumeSectionRef.current.offsetHeight : 0;
-            const contactThreshold = resumeSectionBottom - (viewportHeight * 0.5); // Reveal Contact when resume is halfway out
+            const contactThreshold = resumeSectionBottom - (viewportHeight * 0.5);
 
 
             // --- Reveal Logic ---
 
             // Reveal Projects
             if (scrollY > heroBottom && !showTechstack) {
-                setshowTech(true); // Show Techstack section when we scroll past hero 
+                setshowTech(true); o
             }
 
-            // Reveal Techstack
-            // This ensures Techstack only reveals after we scroll past hero
             if (scrollY > showTechstackThreshold && !showTechstack) {
                 setshowTech(true);
             }
 
             if (scrollY > projectsThreshold && !showProjects) {
                 setShowProjects(true);
-                setShowHeroSocialLinks(true); // Hide hero social links once we scroll past hero
+                setShowHeroSocialLinks(true);
             }
 
-            // Reveal Experience
-            // This ensures Experience only reveals after Projects has started showing
+
             if (showProjects && scrollY > experienceThreshold && !showExperience) {
                 setShowExperience(true);
             }
 
-            // Reveal Resume
-            // This ensures Resume only reveals after Experience has started showing
+
             if (showExperience && scrollY > resumeThreshold && !showResume) {
                 setShowResume(true);
             }
@@ -108,15 +137,13 @@ const Home = () => {
     }, [showProjects, showResume, showContact, showTechstack, showExperience, showHeroSocialLinks]);
 
 
-
     const scrollToFirstReveal = () => {
-        // When clicking the down arrow, set projects to true and hide hero social links
         setShowProjects(true);
         setShowHeroSocialLinks(true);
-        // Then scroll smoothly to the projects section
+
         setTimeout(() => {
             projectsSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100); // Small delay to allow state update to apply before scroll
+        }, 100);
     };
 
 
@@ -194,21 +221,64 @@ const Home = () => {
                 ref={TechStackSectionRef}
                 className={`transition-all duration-1000 ease-out ${showTechstack ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}`}
             >
-                <section id="techstack" className="py-20 min-h-min: ">
-                    <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase mb-10 tracking-widest">
+                <section id="techstack" className="py-24 text-white">
+                    <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-widest mb-20">
                         <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
                             My TechStack
                         </span>
                     </h2>
-                    <ScrollVelocity
-                        texts={['PHP   JavaScript   Python    Node.js   MySQL', 'TailwindCSS  React  Bootstrap  Vite.js EXpress.js']}
-                        velocity={80}
-                        className="text-white text-4xl font-semibold tracking-wide"
-                        style={{ whiteSpace: 'nowrap', overflow: 'hidden', width: '100%' }}
-                        numCopies={4}
-                    />
 
+                    {/* FRONTEND */}
+                    <div className="items-center">
+                        <h3 className="text-2xl font-semibold text-start uppercase tracking-wide mb-8 text-cyan-400">
+                            Frontend
+                        </h3>
+                        <ScrollVelocity
+                            texts={[
+                                <div className="flex space-x-6 px-4">
+                                    {frontendTechs.map((tech, index) => (
+                                        <div
+                                            key={index}
+                                            className="min-w-[160px] px-5 py-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 shadow-md flex items-center justify-center gap-3 hover:bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 hover:shadow-lg transition-all duration-300"
+                                        >
+                                            <span className="text-3xl">{tech.icon}</span>
+                                            <span className="text-base font-medium text-white">{tech.name}</span>
+                                        </div>
+                                    ))}
+                                </div>,
+                            ]}
+                            velocity={70}
+                            numCopies={4}
+                            className="items-center"
+                        />
+                    </div>
+
+                    {/* BACKEND */}
+                    <div>
+                        <h3 className="text-2xl  font-semibold text-start uppercase tracking-wide mb-8 text-purple-400">
+                            Backend
+                        </h3>
+                        <ScrollVelocity
+                            texts={[
+                                <div className="flex space-x-6 px-4">
+                                    {backendTechs.map((tech, index) => (
+                                        <div
+                                            key={index}
+                                            className="min-w-[160px] px-5 py-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 shadow-md flex items-center justify-center gap-3 hover:bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 hover:shadow-lg transition-all duration-300"
+                                        >
+                                            <span className="text-3xl">{tech.icon}</span>
+                                            <span className="text-base font-medium text-white">{tech.name}</span>
+                                        </div>
+                                    ))}
+                                </div>,
+                            ]}
+                            velocity={70}
+                            numCopies={4}
+                            className="items-center"
+                        />
+                    </div>
                 </section>
+
 
             </div>
 
@@ -218,12 +288,11 @@ const Home = () => {
                 ref={projectsSectionRef}
                 className={`transition-all duration-1000 ease-out ${showProjects ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}`}
             >
-                <section id='projects' className="py-12 min-h-screen flex items-center justify-center">
+                <section id='projects' className=" min-h-screen flex items-center justify-center">
                     <Project />
                 </section>
             </div>
 
-            {/* Experience Section - Now correctly linked to showExperience state */}
             <div
                 ref={experienceSectionRef}
                 className={`transition-all duration-1000 ease-out ${showExperience ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none'}`}
