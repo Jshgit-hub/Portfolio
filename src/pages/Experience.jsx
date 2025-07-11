@@ -19,9 +19,12 @@ const experienceData = [
         location: 'Cabanatuan Nueva Ecija, Philippines',
         dates: 'January 2025 - May 2025',
         responsibilities: [
-            'Assisted in designing and developing an e-Konsulta Patient Management System to streamline outpatient consultations.',
-            'Helped transition manual transactions into a systematic digital process, allowing staff to access patient overviews and manage records more efficiently.',
-            'Developing apis for the e-Konsulta Patient Management System using Express.js and MySQL.',
+            'Merged the legacy patient database with the new system, ensuring data consistency and integrity across platforms.',
+            'Designed and implemented secure RESTful APIs for smooth data exchange between frontend and backend.',
+            'Used React’s Context API to manage and share data like user sessions and patient records across components.',
+            'Synchronized frontend UI with backend logic to enable real-time data updates and smooth user interaction.',
+            'Wrote Cypress tests to automate and validate forms, workflows, and API responses for better reliability.',
+            'Developed responsive and user-friendly interfaces using React and TailwindCSS for all user roles.'
         ],
     },
 ];
