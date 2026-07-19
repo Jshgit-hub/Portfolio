@@ -2,101 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-/* tailwind doesn't support this by default, so use @layer if needed */
 @layer base {
+    html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+    }
 
-    p,
-    h1,
-    h2,
-    h3,
-    h4 {
-        @apply m-4;
+    body {
+        @apply bg-paper text-ink font-sans antialiased;
+        font-synthesis-weight: none;
+    }
+
+    /* The display face is optically large; kill the default gap it leaves. */
+    .font-display {
+        line-height: 0.92;
+    }
+
+    ::selection {
+        background: #16130F;
+        color: #F2EFE8;
+    }
+
+    :focus-visible {
+        outline: 2px solid #B23A17;
+        outline-offset: 3px;
     }
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
+@layer components {
+
+    /* Small caps mono label — used for every section marker and field name. */
+    .label {
+        @apply font-mono text-[11px] uppercase tracking-[0.18em] text-muted;
     }
 
-    50% {
-        background-position: 100% 50%;
+    /* Underline that draws on hover, left to right. */
+    .link-draw {
+        @apply relative inline-block text-ink no-underline;
     }
 
-    100% {
-        background-position: 0% 50%;
+    .link-draw::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .link-draw:hover::after,
+    .link-draw:focus-visible::after {
+        transform: scaleX(1);
     }
 }
 
-.animate-gradient {
-    animation: gradient 6s ease infinite;
+/* Reveal-on-scroll, handled in CSS so nothing janks the main thread. */
+.reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-body {
-    @apply font-montserrat;
+.reveal.is-in {
+    opacity: 1;
+    transform: none;
 }
 
-.text-gradient {
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-}
+@media (prefers-reduced-motion: reduce) {
 
+    html {
+        scroll-behavior: auto;
+    }
 
-.social-link-gradient-base {
-    position: relative;
-    z-index: 0;
-    padding: 10px;
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 
-    overflow: hidden;
-
-}
-
-
-.social-link-gradient-base::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 0.5rem;
-    /* Matches your rounded-lg */
-    padding: 2px;
-    /* This creates the visible border thickness */
-
-    /* Keep background-size larger than element to create the waving effect */
-    background-size: 200% 200%;
-
-
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    z-index: -1;
-    animation: border-wave 6s ease-in infinite;
-}
-
-/* Specific gradient colors for each link */
-.social-link-gradient-email::before {
-    background-image: linear-gradient(to right, theme('colors.gradient-email-1'), theme('colors.gradient-email-2'), theme('colors.gradient-email-1'));
-}
-
-.social-link-gradient-linkedin::before {
-    background-image: linear-gradient(to right, theme('colors.gradient-linkedin-1'), theme('colors.gradient-linkedin-2'), theme('colors.gradient-linkedin-1'));
-}
-
-.social-link-gradient-upwork::before {
-    background-image: linear-gradient(to right, theme('colors.gradient-upwork-1'), theme('colors.gradient-upwork-2'), theme('colors.gradient-upwork-1'));
-}
-
-.social-link-gradient-github::before {
-    background-image: linear-gradient(to right, theme('colors.gradient-github-1'), theme('colors.gradient-github-2'), theme('colors.gradient-github-1'));
-}
-
-/* Hover effect: pause animation. */
-.social-link-gradient-base:hover::before {
-    animation-play-state: paused;
-}
-
-
-html {
-    scroll-behavior: smooth;
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }

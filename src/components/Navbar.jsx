@@ -1,38 +1,40 @@
-import React, { useState } from "react";
+import React from 'react';
 
-const Navbar = () => {
-    const [open, setOpen] = useState(false);
+const sections = [
+    { href: '#work', label: 'Work' },
+    { href: '#experience', label: 'Experience' },
+    { href: '#stack', label: 'Stack' },
+];
 
+export default function Navbar() {
     return (
-        <nav className="bg-brand font-montserrat text-white px-6 py-4 items-center flex justify-between relative">
-            <div className="text-2xl font-bold mx-3 ">Joshua</div>
-            <div className="hidden md:flex gap-8">
-                <a href="#home" className="hover:text-cyan-400 transition-colors">Home</a>
-                <a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a>
-                <a href="#experience" className="hover:text-cyan-400 transition-colors">Experience</a>
-                <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
-            </div>
-            <button
-                className="md:hidden flex flex-col gap-1"
-                onClick={() => setOpen(!open)}
-                aria-label="Toggle Menu"
-            >
-                <span className="w-7 h-1 bg-white rounded"></span>
-                <span className="w-7 h-1 bg-white rounded"></span>
-                <span className="w-7 h-1 bg-white rounded"></span>
-            </button>
-            <div
-                className={`absolute top-full left-0 w-full bg-brand flex flex-col items-center gap-6 py-6 md:hidden z-50
-                transition-all duration-300 ease-in-out
-                ${open ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"}`}
-            >
-                <a href="#home" className="hover:text-cyan-400" onClick={() => setOpen(false)}>Home</a>
-                <a href="#projects" className="hover:text-cyan-400" onClick={() => setOpen(false)}>Projects</a>
-                <a href="#experience" className="hover:text-cyan-400" onClick={() => setOpen(false)}>Experience</a>
-                <a href="#contact" className="hover:text-cyan-400" onClick={() => setOpen(false)}>Contact</a>
-            </div>
-        </nav>
-    );
-};
+        <header className="sticky top-0 z-50 bg-paper/90 backdrop-blur-sm border-b border-rule">
+            <div className="mx-auto max-w-6xl px-5 sm:px-8">
+                <div className="flex h-14 items-center justify-between gap-6">
+                    <a href="#top" className="font-mono text-[13px] tracking-tight text-ink">
+                        J. La Rosa
+                        <span className="hidden sm:inline text-muted"> / web developer</span>
+                    </a>
 
-export default Navbar;
+                    <nav className="flex items-center gap-6">
+                        <ul className="hidden md:flex items-center gap-6">
+                            {sections.map((s) => (
+                                <li key={s.href}>
+                                    <a href={s.href} className="label link-draw hover:text-ink">
+                                        {s.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                        <a
+                            href="#contact"
+                            className="font-mono text-[12px] uppercase tracking-[0.14em] text-oxide link-draw"
+                        >
+                            Get in touch
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    );
+}
