@@ -16,7 +16,7 @@ export const stack = [
     },
     {
         group: 'For connecting systems',
-        items: ['REST APIs', 'Webhooks', 'Gravity Forms', 'Express', 'Node.js', 'Zoho'],
+        items: ['REST APIs', 'Webhooks', 'Express', 'Node.js', 'MySQL', 'Zoho'],
     },
     {
         group: 'Also in hand',
@@ -35,7 +35,7 @@ export const experience = [
         lines: [
             'Own the WooCommerce subscription platform the company bills its clients through. Tracing each billing discrepancy to the plugin behavior that caused it, rather than correcting invoices one at a time, brought the repeat reports down and kept client accounts reconciled across several linked sites.',
             'Designed and built the company\'s finance system to a deliberate MVP scope — data models, role-based access, approval logic — replacing an approval chain that ran on email and spreadsheets. Requests are tracked in one place now instead of stalling in an inbox.',
-            'Wired that workflow to webhooks and Gravity Forms so notifications, syncing, and conditional routing run untouched. The manual re-keying between forms and finance records is gone.',
+            'Built the routing layer for it by hand rather than assembling it in a form plugin — webhooks firing on state changes, with the notification and conditional-approval paths written directly. The manual re-keying between forms and finance records is gone.',
             'Customize and tune WooCommerce plugins, watching PageSpeed Insights and uptime alerts so a slowdown surfaces before a client notices it.',
             'Handle support and issue resolution in Zoho, working from SOPs and workflow guides I wrote, so recurring problems are solved from a documented process rather than from memory.',
             'Use Claude Code CLI with custom plugins and skills to build context-aware tooling and hold the codebase to a standard, which shortened the turnaround between versioned releases.',

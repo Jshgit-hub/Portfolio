@@ -14,8 +14,8 @@ const projects = [
         summary:
             'Payment requests and internal financial workflows: who may ask, who approves, and what happens at every step in between.',
         note:
-            'Approvals used to travel by email and spreadsheet, and a request could sit for days in the wrong inbox. I built this to MVP scope on purpose — data models and role-based access first, then the approval logic, then webhooks and Gravity Forms to route and notify on their own. The hand-offs and re-keying are gone, and a payment can no longer change state without leaving a record of who changed it.',
-        technologies: ['PHP', 'WordPress', 'Webhooks', 'Gravity Forms', 'MySQL'],
+            'Approvals used to travel by email and spreadsheet, and a request could sit for days in the wrong inbox. I built this to MVP scope on purpose — data models and role-based access first, then the approval logic, then the webhooks and routing that move a request along on its own. I wrote that workflow by hand instead of assembling it in a form plugin, which is why the conditional paths do exactly what the finance team asked for and nothing else. The hand-offs and re-keying are gone, and a payment can no longer change state without leaving a record of who changed it.',
+        technologies: ['PHP', 'WordPress', 'Webhooks', 'Tailwind', 'MySQL'],
     },
     {
         id: 2,
