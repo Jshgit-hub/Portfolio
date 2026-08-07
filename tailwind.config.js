@@ -7,24 +7,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        paper: "#F2EFE8",     // page
-        card: "#EAE5DA",      // recessed panels
-        ink: "#16130F",       // primary type
-        graphite: "#4A443B",  // secondary type
-        muted: "#8A8175",     // metadata
-        rule: "#D8D1C2",      // hairlines
-        oxide: "#B23A17",     // single accent — links, numbers, CTA
+        // Neo-brutalist palette
+        cream: "#FDF6E3",     // page
+        paper: "#FFFFFF",     // block surfaces
+        ink: "#000000",       // borders + primary type
+        cobalt: "#2038E5",    // accent 1
+        yellow: "#FFC53D",    // accent 2
       },
       fontFamily: {
-        display: ['"Instrument Serif"', 'Georgia', 'serif'],
-        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
-        sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+        display: ['"Arial Black"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+        mono: ['ui-monospace', 'Menlo', 'Consolas', 'monospace'],
       },
-      letterSpacing: {
-        tightest: '-0.045em',
-      },
-      maxWidth: {
-        measure: '62ch',
+      boxShadow: {
+        hard: '6px 6px 0 #000',
+        'hard-sm': '4px 4px 0 #000',
       },
     },
   },

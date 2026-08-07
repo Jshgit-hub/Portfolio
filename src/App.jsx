@@ -1,17 +1,9 @@
-import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import { inject } from "@vercel/analytics";
 
 inject();
 
-// One page, one scroll. Routing bought nothing here and cost a bundle.
+// One page, one scroll. Home renders the full brutalist layout (topbar + sections).
 export default function App() {
-  return (
-    <div className="min-h-screen bg-paper text-ink">
-      <Navbar />
-      <main>
-        <Home />
-      </main>
-    </div>
-  );
+  return <Home />;
 }

@@ -1,57 +1,103 @@
-// Single source of copy for all three design directions. Edit here, not in the
-// page components — otherwise the versions drift apart while you compare them.
+// Single source of copy for the site. Edit here, not in the page components.
+// Content mirrors the current resume (Full-Stack Web Developer).
+
+export const NAME = 'Joshua La Rosa';
+export const FULL_NAME = 'Joshua Veracruz La Rosa';
+export const TITLE = 'Full-Stack Web Developer';
+export const SUBTITLE = 'React · TypeScript · Node.js · PHP';
+export const LOCATION = 'Philippines (UTC+8) · Remote';
 
 export const EMAIL = '1114joshuafeliciano@gmail.com';
 export const PHONE = '+63 963 759 5816';
 
+export const SUMMARY =
+    "Full-stack developer. React and TypeScript on the frontend, Node.js or PHP on the backend, and comfortable owning the database and deployment side too. I built an OAuth 2.0 SSO platform now used across the company, and spend most days on production WooCommerce work: subscriptions, billing, checkout, and the payment flows that don't quite behave.";
+
 export const LINKS = [
     ['GitHub', 'https://github.com/Jshgit-hub'],
-    ['LinkedIn', 'https://www.linkedin.com/in/la-rosa-joshua-570115370/'],
+    ['LinkedIn', 'https://www.linkedin.com/in/joshua-la-rosa-570115370/'],
+];
+
+// A few headline numbers for the hero stat strip.
+export const HERO_STATS = [
+    { value: '~300', label: 'employees on the SSO platform' },
+    { value: '7', label: 'internal apps, one credential' },
+    { value: '48→91', label: 'PageSpeed on the WooCommerce rebuild' },
 ];
 
 export const stack = [
     {
-        group: 'Reach for daily',
-        items: ['JavaScript', 'PHP', 'React', 'WordPress', 'WooCommerce', 'MySQL', 'Tailwind CSS'],
+        group: 'Languages',
+        items: ['TypeScript', 'JavaScript', 'PHP', 'SQL', 'HTML/CSS'],
     },
     {
-        group: 'For connecting systems',
-        items: ['REST APIs', 'Webhooks', 'Express', 'Node.js', 'MySQL', 'Zoho'],
+        group: 'Frontend',
+        items: ['React', 'TailwindCSS', 'Context API'],
     },
     {
-        group: 'Also in hand',
-        items: ['Python', 'Elementor', 'Bootstrap', 'Cypress', 'Figma', 'Git', 'Claude Code CLI'],
+        group: 'Backend & Data',
+        items: ['Node.js', 'Express.js', 'Prisma', 'PostgreSQL', 'MySQL', 'REST API design'],
+    },
+    {
+        group: 'Auth & Identity',
+        items: ['OAuth 2.0'],
+    },
+    {
+        group: 'DevOps & Tooling',
+        items: ['Docker', 'Git/GitHub'],
+    },
+    {
+        group: 'WordPress & WooCommerce',
+        items: [
+            'Theme dev & migration',
+            'Plugin customization',
+            'Subscriptions & recurring billing',
+            'Checkout customization',
+            'Custom admin dashboards',
+            'Roles & capabilities',
+            'Transactional email templates',
+            'Elementor',
+        ],
+    },
+    {
+        group: 'Integrations & Automation',
+        items: ['REST APIs', 'Webhooks', 'Payment processing troubleshooting', 'Conditional workflow routing', 'Zoho'],
+    },
+    {
+        group: 'Testing & Performance',
+        items: ['Cypress (E2E)', 'PageSpeed Insights', 'Uptime monitoring'],
+    },
+    {
+        group: 'Tools',
+        items: ['Git', 'Figma', 'Obsidian', 'Claude Code CLI'],
     },
 ];
 
-// Present tense for ongoing duties, past tense for finished builds — held
-// consistent within each bullet.
+// Present tense for ongoing duties, past tense for finished builds.
 export const experience = [
     {
         role: 'Web Developer',
         org: 'InsBOSS USA',
         place: 'Remote',
-        dates: 'Jul 2025 – present',
+        dates: 'Jul 2025 – Present',
         lines: [
-            'Own the WooCommerce subscription platform the company bills its clients through. Tracing each billing discrepancy to the plugin behavior that caused it, rather than correcting invoices one at a time, brought the repeat reports down and kept client accounts reconciled across several linked sites.',
-            'Designed and built the company\'s finance system to a deliberate MVP scope — data models, role-based access, approval logic — replacing an approval chain that ran on email and spreadsheets. Requests are tracked in one place now instead of stalling in an inbox.',
-            'Built the routing layer for it by hand rather than assembling it in a form plugin — webhooks firing on state changes, with the notification and conditional-approval paths written directly. The manual re-keying between forms and finance records is gone.',
-            'Customize and tune WooCommerce plugins, watching PageSpeed Insights and uptime alerts so a slowdown surfaces before a client notices it.',
-            'Handle support and issue resolution in Zoho, working from SOPs and workflow guides I wrote, so recurring problems are solved from a documented process rather than from memory.',
-            'Use Claude Code CLI with custom plugins and skills to build context-aware tooling and hold the codebase to a standard, which shortened the turnaround between versioned releases.',
+            'Architected and shipped a company-wide single sign-on platform (TypeScript, React, Prisma, OAuth 2.0, PostgreSQL, Docker) giving roughly 300 employees one credential across 7 internal applications, replacing per-app manual sign-ins.',
+            'Maintain and extend a multi-brand WooCommerce subscription platform across several interconnected WordPress sites, covering recurring billing, checkout, and payment processing.',
+            'Investigate and resolve billing discrepancies by tracing subscription records against payment transactions, then fixing the code path behind the error rather than correcting records by hand.',
+            'Customize WooCommerce plugins, checkout pages, and transactional email templates in PHP where stock behavior does not fit the subscription model, including porting a full template and checkout set across product lines.',
+            'Own inbound support tickets in Zoho end to end; wrote the SOPs and workflow guides the team uses for recurring billing and platform issues.',
+            'Built custom Claude Code CLI plugins and skills encoding project conventions and codebase context, so AI-assisted changes follow existing standards and need less rework before release.',
         ],
     },
     {
-        role: 'Full-stack Developer Intern',
-        org: 'YKMK Global Training and Assessment, Inc.',
-        note: 'Wesleyan University Hospital Philippines',
+        role: 'Full Stack Developer Intern',
+        org: 'Wesleyan University Hospital Philippines',
         place: 'Cabanatuan, Nueva Ecija',
         dates: 'Jan – May 2025',
         lines: [
-            'Merged a legacy patient database into the new hospital system, reconciling the records that existed in both and keeping the data consistent across platforms.',
-            'Designed and implemented secure REST APIs for the exchange between frontend and backend services.',
-            'Built the React and Tailwind interfaces for every user role, with Context API holding user sessions and patient records.',
-            'Wrote Cypress end-to-end tests across form validation, workflows, and API responses — the paths hospital staff use hundreds of times a week.',
+            'Migrated a legacy patient database into the hospital\'s new system, reconciling schema differences and duplicate records so clinical staff worked from one source of truth.',
+            'Built the patient records interface in React and TailwindCSS with Context API managing user sessions and record state, backed by REST endpoints for data exchange with backend services.',
+            'Wrote Cypress end-to-end tests covering form validation, core patient workflows, and API responses, catching regressions before handoff.',
         ],
     },
 ];
@@ -61,14 +107,14 @@ export const credentials = [
         term: 'Education',
         lines: [
             'BS Information Technology, major in Web Systems Technology — 2021–2025',
-            'Nueva Ecija Science and Technology (Wesleyan University Philippines)',
+            'Nueva Ecija University of Science and Technology (NEUST), Nueva Ecija, Philippines',
         ],
     },
     {
         term: 'Certifications',
         lines: [
             'IT Specialist, HTML and CSS — Certiport, 2024',
-            'NCIII Bookkeeping — TESDA, 2019',
+            'NC III Bookkeeping — TESDA, 2019',
         ],
     },
 ];
