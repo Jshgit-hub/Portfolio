@@ -11,7 +11,7 @@ export const EMAIL = '1114joshuafeliciano@gmail.com';
 export const PHONE = '+63 963 759 5816';
 
 export const SUMMARY =
-    "Full-stack developer. React and TypeScript on the frontend, Node.js or PHP on the backend, and comfortable owning the database and deployment side too. I built an OAuth 2.0 SSO platform now used across the company, and spend most days on production WooCommerce work: subscriptions, billing, checkout, and the payment flows that don't quite behave.";
+    "I'm a full-stack developer who likes owning the whole picture — frontend, backend, database, and the deployment underneath it. I care more about understanding the problem than rushing to code it, and I'd rather ship something simple and dependable than clever and fragile. The parts most people avoid — the edge cases, the flows that don't quite behave — are the ones I enjoy most.";
 
 export const LINKS = [
     ['GitHub', 'https://github.com/Jshgit-hub'],
